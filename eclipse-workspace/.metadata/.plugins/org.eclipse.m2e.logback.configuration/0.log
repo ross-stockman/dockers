@@ -1,9 +1,0 @@
-2018-11-10 21:59:34,923 [Worker-2: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is not available. Remote download required.
-2018-11-10 22:00:57,896 [Worker-0: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using NULL lifecycle mapping for MavenProject: org.rstockman:rstockman-parent:1.0.1-SNAPSHOT @ /home/developer/git/rstockman-parent/pom.xml.
-2018-11-10 22:00:57,969 [Worker-0: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 0 sec
-2018-11-10 22:01:40,543 [Worker-1: Launching Executing install in _home_developer_git_rstockman-parent] INFO  o.e.m.i.launch.MavenLaunchDelegate - /home/developer/git/rstockman-parent
-2018-11-10 22:01:40,544 [Worker-1: Launching Executing install in _home_developer_git_rstockman-parent] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn -B install
-2018-11-10 22:02:24,501 [Worker-0: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is not available. Remote download required.
-2018-11-10 22:03:38,863 [Worker-2: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is not available. Remote download required.
-2018-11-11 00:54:42,494 [Worker-0: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is not available. Remote download required.
-2018-11-11 00:56:16,504 [Worker-5: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
