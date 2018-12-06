@@ -1,0 +1,49 @@
+jdbc:oracle:thin:@localhost:1521:xe
+system
+oracle
+
+sudo docker stop oracle-12c
+sudo docker rm oracle-12c
+sudo docker run -v ~/docker/oracle:/mnt --name oracle-12c -d -p 8080:8080 -p 1521:1521 sath89/oracle-12c
+sudo docker logs -f oracle-12c
+sudo docker exec -it oracle-12c sqlplus system/oracle@//localhost:1521/xe
+sudo docker exec -it oracle-12c sqlplus -L -S system/oracle@//localhost:1521/xe @/mnt/setup.sql
+sudo docker exec -it oracle-12c sqlplus -S system/oracle@//localhost:1521/xe @/mnt/ddl.sql
+sudo docker exec -it oracle-12c sqlplus -S system/oracle@//localhost:1521/xe @/mnt/dml.sql
+
+CREATE TABLESPACE tbs_perm_01
+  DATAFILE 'tbs_perm_01.dat'
+    SIZE 20M
+    REUSE
+    AUTOEXTEND ON NEXT 10M MAXSIZE 200M;
+
+CREATE TEMPORARY TABLESPACE tbs_temp_01
+  TEMPFILE 'tbs_temp_01.dbf'
+    SIZE 5M
+    AUTOEXTEND ON;
+
+CREATE UNDO TABLESPACE tbs_undo_01
+  DATAFILE 'tbs_undo_01.f'
+    SIZE 5M
+    AUTOEXTEND ON
+  RETENTION GUARANTEE;
+
+create user trucker identified by 22360606 default tablespace tbs_perm_01 temporary tablespace tbs_temp_01 quota 20M on tbs_perm_01;
+
+GRANT create session TO trucker;
+GRANT create table TO trucker;
+GRANT create view TO trucker;
+GRANT create any trigger TO trucker;
+GRANT create any procedure TO trucker;
+GRANT create sequence TO trucker;
+GRANT create synonym TO trucker;
+
+
+create table trucker.test (
+id int,
+name varchar(10)
+);
+
+insert into trucker.test (id, name) values (1, 'testing');
+
+select * from trucker.test;
