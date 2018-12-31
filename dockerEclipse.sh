@@ -10,4 +10,4 @@ docker run --rm -d \
 -v ~/docker/git:/home/developer/git \
 -v ~/docker/eclipse-workspace:/home/developer/eclipse-workspace \
 --name eclipse \
-dev/eclipse:1.0
+dev/eclipse
